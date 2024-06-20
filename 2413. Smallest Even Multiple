@@ -1,0 +1,6 @@
+class Solution:
+    def smallestEvenMultiple(self, n: int) -> int:
+        if (n%2==0): //if the input is an even no, then the op is that input itself, else the op is ip*2
+            return n
+        else:
+            return n*2
