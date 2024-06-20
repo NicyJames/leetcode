@@ -1,0 +1,9 @@
+class Solution:
+    def subtractProductAndSum(self, n: int) -> int:
+        p,s=1,0
+        while(n!=0):
+            m=n%10
+            p*=m
+            s+=m
+            n//=10  #floor division should be used to get the quotient in python3 and not / which is used for get both quotient.remainder ,i.e,2.14453
+        return p-s
