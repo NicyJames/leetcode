@@ -1,0 +1,30 @@
+class Solution {
+public:
+    bool isPalindrome(int x) {
+        int pal=0,reminder=0,n;
+        pal=x;
+        if(x!=abs(x))
+        {
+            return false;
+        }
+        else
+        {
+         while(x!=0)
+         {
+            n=x%10;
+            reminder=reminder*10+n;
+            x/=10;
+         }
+         if(reminder==pal)
+         {
+            return true;
+         }
+         else
+         {
+            return false;
+         }
+        }
+        return 0;
+    }
+    
+};
