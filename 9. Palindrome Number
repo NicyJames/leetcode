@@ -1,11 +1,11 @@
 class Solution {
 public:
     bool isPalindrome(int x) {
-        int pal=0,reminder=0,n;
+        long pal=0,reminder=0,n; //else overflow might happen
         pal=x;
         if(x!=abs(x))
         {
-            return false;
+            return false; //since class is boolean function
         }
         else
         {
