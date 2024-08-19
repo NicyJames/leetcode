@@ -1,0 +1,5 @@
+# Write your MySQL query statement below
+select P.firstName, P.lastName, A.city, A.state
+from Person P  LEFT JOIN Address A
+on P.personId = A.personId 
+#//when both the tables share a column of the exact same name on which they join.
