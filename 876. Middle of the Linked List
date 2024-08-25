@@ -1,0 +1,14 @@
+class Solution {
+public:
+    ListNode* middleNode(ListNode* head) {
+        ListNode* slowptr=head;
+        ListNode* fastptr=head;
+        int count=0;
+        while(fastptr!=nullptr && fastptr->next!=nullptr)
+        {
+            slowptr=slowptr->next;
+            fastptr=fastptr->next->next;
+        }
+           return slowptr;
+    }
+};
