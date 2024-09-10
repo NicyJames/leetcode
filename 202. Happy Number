@@ -1,0 +1,24 @@
+class Solution {
+    private:
+    int square(int n)
+    {
+    int sum=0,r=1;
+     while(n!=0)
+    {
+        int r=n%10;
+        sum+=r*r;
+        n/=10;
+    }return sum;
+    }
+public:
+    bool isHappy(int n) {
+        while (n != 1 && n != 4) /* 4 is an exceptional case bec it can become a cycleWhy 4?
+Once the sum of squares reaches 4, it will continue repeating this sequence:
+4 → 16 → 37 → 58 → 89 → 145 → 42 → 20 → 4.*/
+        {
+            n=square(n);
+        }
+        return n==1;
+
+    }
+};
