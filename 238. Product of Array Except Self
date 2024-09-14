@@ -1,0 +1,23 @@
+class Solution {
+public:
+    vector<int> productExceptSelf(vector<int>& nums) {
+        int n = nums.size();
+        vector<int> op(n, 1); // Initialize the result array with 1
+        
+        // Calculate the left products for each element
+        int left_product = 1;
+        for (int i = 0; i < n; i++) {
+            op[i] = left_product;
+            left_product *= nums[i];
+        }
+        
+        // Calculate the right products and multiply with the left products
+        int right_product = 1;
+        for (int i = n - 1; i >= 0; i--) {
+            op[i] *= right_product;
+            right_product *= nums[i];
+        }
+
+        return op;
+    }
+};
