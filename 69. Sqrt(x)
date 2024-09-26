@@ -1,0 +1,24 @@
+class Solution {
+public:
+    int mySqrt(int x) {
+        if (x == 0 || x == 1) {
+            return x;  // Base case for 0 and 1
+        }
+
+        int left = 0, right = x, ans = 0;
+
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            
+            // To avoid overflow, compare mid * mid with x using division
+            if (mid <= x / mid) {
+                ans = mid;  // Record mid as a possible answer
+                left = mid + 1;  // Continue searching on the right
+            } else {
+                right = mid - 1;  // Continue searching on the left
+            }
+        }
+
+        return ans;  // Return the largest integer whose square is <= x
+    }
+};
